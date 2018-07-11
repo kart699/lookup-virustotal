@@ -12,6 +12,15 @@ VirusTotal not only tells you whether a given antivirus solution detected a subm
 The same is true for URL scanners, most of which will discriminate between malware sites, phishing sites, suspicious sites, etc. 
 Some engines will provide additional information, stating explicitly whether a given URL belongs to a particular botnet, which brand is targeted by a given phishing site, and so on.
  
+##### PRE-REQUISITES to use VirusTotal and DNIF  
+Outbound access required to resolve VirusTotal API
+
+| Protocol   | Source IP  | Source Port  | Direction	 | Destination Domain | Destination Port  |  
+|:------------- |:-------------|:-------------|:-------------|:-------------|:-------------|  
+| TCP | DS,CR,A10 | Any | Egress	| github.com | 443 |
+| TCP | DS,CR,A10 | Any | Egress	| virustotal.com | 443 |
+
+
 ##### Lookups integrated with VirusTotal
 
 ##### Retrieve URL scan reports  
@@ -148,7 +157,12 @@ The VirusTotal API is found on github at
 
 1. #####    Login to your Data Store, Correlator, and A10 containers.  
    [ACCESS DNIF CONTAINER VIA SSH](https://dnif.it/docs/guides/tutorials/access-dnif-container-via-ssh.html)
-2. #####    Move to the ‘/dnif/<Deployment-key/lookup_plugins’ folder path.
+##### Note:
+```
+VirusTotal API is deployed on Data Store for running Adhoc and search lookups
+VirusTotal API is deployed on Correlator for running workbooks and reports   
+```
+2. #####    Move to the `/dnif/<Deployment-key>/lookup_plugins` folder path.
 ```
 $cd /dnif/CnxxxxxxxxxxxxV8/lookup_plugins/
 ```
@@ -156,7 +170,7 @@ $cd /dnif/CnxxxxxxxxxxxxV8/lookup_plugins/
 ```  
 git clone https://github.com/dnif/lookup-virustotal.git virustotal
 ```
-4. #####   Move to the ‘/dnif/<Deployment-key/lookup_plugins/virustotal/’ folder path and open dnifconfig.yml configuration file     
+4. #####   Move to the `/dnif/<Deployment-key>/lookup_plugins/virustotal/` folder path and open dnifconfig.yml configuration file     
     
    Replace the tag: <Add_your_api_key_here> with your VirusTotal api key
 ```
