@@ -152,6 +152,8 @@ The VirusTotal API is found on github at
 
   https://github.com/dnif/lookup-virustotal
 
+The following process has to be repeated on all components
+
 #### Getting started with VirusTotal API and DNIF
 
 1. #####    Login to your Data Store, Correlator, and A10 containers.  
