@@ -152,7 +152,7 @@ The VirusTotal API is found on github at
 
   https://github.com/dnif/lookup-virustotal
 
-The following process has to be repeated on all components
+The following process has to be repeated on all of the following components
 
 #### Getting started with VirusTotal API and DNIF
 
